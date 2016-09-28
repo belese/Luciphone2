@@ -1,12 +1,16 @@
 # Luciphone2
 
-## Dependance : 
-policykit-1, python-pymedia
-
 ## Installation :
+
+on a raspbian minimal image
+
 - Login as root
 ```
 sudo -i
+```
+- Install dependencies
+```
+sudo apt-get install policykit-1, python-pymedia
 ```
 - Install [PhatDac sound card](https://learn.pimoroni.com/tutorial/phat/raspberry-pi-phat-dac-install)
 ```
