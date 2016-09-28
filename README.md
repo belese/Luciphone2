@@ -4,10 +4,18 @@
 policykit-1, python-pymedia
 
 ## Installation :
-
+- Login as root
+```
+sudo -i
+```
+- Install [PhatDac sound card](https://learn.pimoroni.com/tutorial/phat/raspberry-pi-phat-dac-install)
+```
+curl -sS get.pimoroni.com/phatdac | bash
+```
+  
 - Allow user pi to shutdown
 
-  Create as root /etc/polkit-1/localauthority/50-local.d/all_all_users_to_shutdown_reboot.pkla with the following content:
+  Create /etc/polkit-1/localauthority/50-local.d/all_all_users_to_shutdown_reboot.pkla with the following content:
 
 ```
 [Allow all users to shutdown and reboot]
