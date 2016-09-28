@@ -18,8 +18,10 @@ curl -sS get.pimoroni.com/phatdac | bash
 ```
   
 - Allow user pi to shutdown
-
-  Create /etc/polkit-1/localauthority/50-local.d/all_all_users_to_shutdown_reboot.pkla with the following content:
+```
+nano /etc/polkit-1/localauthority/50-local.d/all_all_users_to_shutdown_reboot.pkla 
+```  
+    copy with the following content:
 
 ```
 [Allow all users to shutdown and reboot]
