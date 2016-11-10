@@ -21,7 +21,7 @@ curl -sS get.pimoroni.com/phatdac | bash
 ```
 nano /etc/polkit-1/localauthority/50-local.d/all_all_users_to_shutdown_reboot.pkla 
 ```  
-    copy with the following content:
+copy with the following content:
 
 ```
 [Allow all users to shutdown and reboot]
@@ -45,7 +45,8 @@ g_multi
 options g_multi file=/dev/mmcblk0p4 stall=0 host_addr=36:0b:5c:23:ce:31
 ```
     
-    add shared partition in readonly in fstab
+
+add shared partition in readonly in fstab
 
 ```
 sudo losetup /dev/loop8 /dev/mmcblk0p4
@@ -65,12 +66,21 @@ Device Boot Start End Sectors Size Id Type
 offset = start offset * 512 
 2048 * 512 = 1048576
 add this line to fstab
-...
+
+```
 /dev/mmcblk0p4  /mnt/share      vfat    ro,loop,offset=1048576   0       0
-...
+```
 
 - Enable serial for debugging
+
 ```
 sudo systemctl enable getty@ttyGS0.service
 ````
-``
+
+- Disable networkink
+
+```
+sudo systemctl disable dhcpcd.service
+sudo systemctl disable network.service
+
+```
