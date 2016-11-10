@@ -29,17 +29,24 @@ Identity=unix-user:*
 Action=org.freedesktop.login1.power-off;org.freedesktop.login1.power-off-multiple-sessions;org.freedesktop.login1.reboot;org.freedesktop.login1.reboot-multiple-sessions
 ResultAny=yes
 ```
+
 - Enable multi_gadget
-    edit etc/modules and add at the end
+    
+edit etc/modules and add at the end
+
 ```
 dwc2
 g_multi
 ```
-    create a file /etc/modprobe.d/multigadget.conf (or whatever before .conf) with this
+    
+   create a file /etc/modprobe.d/multigadget.conf (or whatever before .conf) with this
+
 ```
 options g_multi file=/dev/mmcblk0p4 stall=0 host_addr=36:0b:5c:23:ce:31
 ```
+    
     add shared partition in readonly in fstab
+
 ```
 sudo losetup /dev/loop8 /dev/mmcblk0p4
 fdisk -l
